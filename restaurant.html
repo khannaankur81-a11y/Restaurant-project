@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Feast Restaurant</title>
+
+<style>
+
+/* GLOBAL STYLES */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+background:#111;
+color:#eee;
+line-height:1.6;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+section{
+padding:80px 0;
+}
+
+h1,h2,h3{
+color:#f5c36b;
+margin-bottom:15px;
+}
+
+p{
+margin-bottom:15px;
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+background:#000;
+padding:15px 0;
+z-index:1000;
+border-bottom:1px solid #333;
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#f5c36b;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:25px;
+}
+
+nav a{
+text-decoration:none;
+color:#eee;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#f5c36b;
+}
+
+/* HERO */
+
+.hero{
+height:90vh;
+background:url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4") center/cover no-repeat;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.hero h1{
+font-size:48px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:12px 25px;
+border-radius:30px;
+background:#f5c36b;
+color:#000;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#fff;
+}
+
+/* ABOUT */
+
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.about-grid img{
+width:100%;
+border-radius:10px;
+}
+
+/* MENU */
+
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.menu-card{
+background:#1a1a1a;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.5);
+transition:0.3s;
+}
+
+.menu-card:hover{
+transform:translateY(-5px);
+}
+
+.menu-card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.menu-card-content{
+padding:15px;
+}
+
+.price{
+color:#f5c36b;
+font-weight:bold;
+}
+
+/* LOCATIONS */
+
+.location-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.location-card{
+background:#1a1a1a;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* REVIEWS */
+
+.review-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.review-card{
+background:#1a1a1a;
+padding:20px;
+border-radius:10px;
+}
+
+/* FORMS */
+
+form{
+background:#1a1a1a;
+padding:30px;
+border-radius:10px;
+max-width:600px;
+margin:auto;
+}
+
+form input,form select,form textarea{
+width:100%;
+padding:10px;
+margin-bottom:15px;
+border:none;
+border-radius:5px;
+}
+
+form button{
+background:#f5c36b;
+border:none;
+padding:12px 20px;
+font-weight:bold;
+border-radius:30px;
+cursor:pointer;
+}
+
+form button:hover{
+background:#fff;
+}
+
+/* FOOTER */
+
+footer{
+background:#000;
+padding:40px 0;
+text-align:center;
+border-top:1px solid #333;
+}
+
+footer p{
+color:#aaa;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+<div class="logo">Royal Feast</div>
+
+<nav>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#locations">Locations</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#franchise">Franchise</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+<div class="hero-content">
+<h1>Experience Taste, Luxury & Tradition</h1>
+<p>India’s fastest growing premium restaurant chain</p>
+<a href="#menu" class="btn">View Menu</a>
+<a href="#locations" class="btn">Find Locations</a>
+</div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+<div class="container about-grid">
+
+<img src="https://images.unsplash.com/photo-1559339352-11d035aa65de">
+
+<div>
+<h2>About Royal Feast</h2>
+<p>Royal Feast is a premium restaurant brand known for exceptional dining experiences and authentic flavors.</p>
+<p>Our chefs carefully craft every dish using fresh ingredients and traditional techniques.</p>
+<p>With multiple franchises across India, we aim to deliver world-class hospitality in every city.</p>
+</div>
+
+</div>
+</section>
+
+<!-- MENU -->
+
+<section id="menu">
+<div class="container">
+<h2>Our Menu</h2>
+
+<div class="menu-grid">
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
+<div class="menu-card-content">
+<h3>Grilled Chicken</h3>
+<p>Perfectly grilled chicken with spices.</p>
+<p class="price">₹450</p>
+</div>
+</div>
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38">
+<div class="menu-card-content">
+<h3>Italian Pizza</h3>
+<p>Authentic wood-fired pizza.</p>
+<p class="price">₹550</p>
+</div>
+</div>
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d">
+<div class="menu-card-content">
+<h3>Royal Burger</h3>
+<p>Juicy burger with premium toppings.</p>
+<p class="price">₹320</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- LOCATIONS -->
+
+<section id="locations">
+<div class="container">
+<h2>Our Locations</h2>
+
+<div class="location-grid">
+
+<div class="location-card">
+<h3>Delhi</h3>
+<p>Connaught Place</p>
+<p>Phone: +91 98765 43210</p>
+<iframe width="100%" height="200" src="https://maps.google.com/maps?q=connaught%20place&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</div>
+
+<div class="location-card">
+<h3>Mumbai</h3>
+<p>Bandra West</p>
+<p>Phone: +91 98765 11111</p>
+<iframe width="100%" height="200" src="https://maps.google.com/maps?q=bandra&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</div>
+
+<div class="location-card">
+<h3>Bangalore</h3>
+<p>MG Road</p>
+<p>Phone: +91 98765 22222</p>
+<iframe width="100%" height="200" src="https://maps.google.com/maps?q=mg%20road%20bangalore&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- REVIEWS -->
+
+<section id="reviews">
+<div class="container">
+<h2>Customer Reviews</h2>
+
+<div class="review-grid">
+
+<div class="review-card">
+★★★★★  
+<p>Best restaurant experience I’ve had!</p>
+<strong>Rahul Sharma</strong>
+</div>
+
+<div class="review-card">
+★★★★★  
+<p>Amazing food and ambience.</p>
+<strong>Priya Mehta</strong>
+</div>
+
+<div class="review-card">
+★★★★☆  
+<p>Great service and delicious desserts.</p>
+<strong>Karan Verma</strong>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+<div class="container">
+<h2>Contact a Franchise</h2>
+
+<form>
+
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email" required>
+<input type="tel" placeholder="Phone Number">
+
+<select>
+<option>Select Franchise</option>
+<option>Delhi</option>
+<option>Mumbai</option>
+<option>Bangalore</option>
+<option>Chandigarh</option>
+<option>Jaipur</option>
+</select>
+
+<textarea placeholder="Message"></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+</section>
+
+<!-- FRANCHISE -->
+
+<section id="franchise">
+<div class="container">
+<h2>Open a Franchise</h2>
+<p style="text-align:center">Join our growing restaurant family and open your own franchise in your city.</p>
+
+<form>
+
+<input type="text" placeholder="Full Name">
+<input type="email" placeholder="Email">
+<input type="tel" placeholder="Phone Number">
+<input type="text" placeholder="City for Franchise">
+<input type="text" placeholder="Investment Budget">
+<input type="text" placeholder="Business Experience">
+<textarea placeholder="Message"></textarea>
+
+<button type="submit">Submit Enquiry</button>
+
+</form>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 Royal Feast Restaurant – All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
